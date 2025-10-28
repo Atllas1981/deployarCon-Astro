@@ -1,12 +1,14 @@
-// @ts-check
-import { defineConfig } from 'astro/config';
-import tailwindcss from '@tailwindcss/vite';
+import { defineConfig } from "astro/config";
+import tailwind from "@tailwindcss/vite";
 
-// https://astro.build/config
+// ⚙️ Configuración para GitHub Pages
+const repo = "deployarCon-Astro";
+
 export default defineConfig({
-  site: 'https://atllas1981.github.io/deployarCon-Astro/', // URL completa del sitio
-  base: '/deployarCon-Astro/', // nombre exacto del repositorio
   vite: {
-    plugins: [tailwindcss()],
+    plugins: [tailwind()],
   },
+  site: `https://atlas1981.github.io/${repo}/`,
+  base: `/${repo}/`,
+  outDir: "dist", // carpeta donde Astro genera el sitio
 });
